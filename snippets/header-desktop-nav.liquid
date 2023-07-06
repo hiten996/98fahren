@@ -7,9 +7,7 @@
   endunless
 -%}
 
-<ul
-  class="site-nav site-navigation small--hide"
->
+<ul class="site-nav site-navigation small--hide">
   {%- for link in main_menu.links limit: limit offset: offset -%}
     {%- liquid
       assign has_dropdown = false
@@ -27,24 +25,29 @@
         <details
           data-hover="{{ hover_menu }}"
           id="site-nav-item--{{ forloop.index }}"
-          class="site-nav__details"
-        >
+          class="site-nav__details">
           <summary
             data-link="{{ link.url }}"
             aria-expanded="false"
             aria-controls="site-nav-item--{{ forloop.index }}"
-            class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
-          >
-            {{ link.title }} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="m1.57 1.59 12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none"/></svg>
+            class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}">
+            {{ link.title }}
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              role="presentation"
+              class="icon icon--wide icon-chevron-down"
+              viewBox="0 0 28 16"><path
+                d="m1.57 1.59 12.76 12.77L27.1 1.59"
+                stroke-width="2"
+                stroke="#000"
+                fill="none" /></svg>
           </summary>
-      {% else %}
-        <a
-          href="{{ link.url }}"
-          class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
-        >
-          {{ link.title }}
-        </a>
-      {% endif %}
+        {% else %}
+          <a href="{{ link.url }}" class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}">
+            {{ link.title }}
+          </a>
+        {% endif %}
         {%- if is_megamenu -%}
           {%- assign previous_column_type = '' -%}
           {%- assign animation_column = 1 -%}
@@ -69,7 +72,8 @@
                     -%}
 
                     {%- if create_new_column -%}
-                      </div><div class="grid__item medium-up--one-fifth appear-animation appear-delay-{{ animation_column }}">
+                    </div>
+                    <div class="grid__item medium-up--one-fifth appear-animation appear-delay-{{ animation_column }}">
                       {%- assign animation_column = animation_column | plus: 1 -%}
                     {%- endif -%}
 
@@ -77,12 +81,11 @@
                       {%- if collections[childlink.object.handle].image != blank and section.settings.mega_menu_images -%}
                         <a href="{{ childlink.url }}">
                           <div class="svg-mask svg-mask--landscape">
-                          {%- render 'image-element',
-                            img: collections[childlink.object.handle].image,
-                            sizeVariable: '20vw',
-                            alt: collections[childlink.object.handle].title,
-                            classes: 'megamenu__collection-image',
-                          -%}
+                            {%- render 'image-element'
+                              , img: collections[childlink.object.handle].image,
+                              sizeVariable: '20vw',
+                              alt: collections[childlink.object.handle].title,
+                              classes: 'megamenu__collection-image', -%}
                           </div>
                         </a>
                       {%- endif -%}
@@ -103,12 +106,13 @@
                     {%- for grandchildlink in childlink.links -%}
                       <div>
                         <a href="{{ grandchildlink.url }}" class="site-nav__dropdown-link">
-                          {{grandchildlink.title}}
+                          {{ grandchildlink.title }}
                         </a>
                       </div>
                     {%- endfor -%}
                   {%- endfor -%}
                 </div>
+                ////////
               </div>
             </div>
           </div>
@@ -126,7 +130,16 @@
                 <a href="{{ childlink.url }}" class="site-nav__dropdown-link site-nav__dropdown-link--second-level{% if has_sub_dropdown %} site-nav__dropdown-link--has-children{% endif %}">
                   {{ childlink.title | escape }}
                   {%- if has_sub_dropdown -%}
-                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="m1.57 1.59 12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none"/></svg>
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      role="presentation"
+                      class="icon icon--wide icon-chevron-down"
+                      viewBox="0 0 28 16"><path
+                        d="m1.57 1.59 12.76 12.77L27.1 1.59"
+                        stroke-width="2"
+                        stroke="#000"
+                        fill="none" /></svg>
                   {%- endif -%}
                 </a>
                 {%- if has_sub_dropdown -%}
@@ -142,7 +155,7 @@
             {%- endfor -%}
           </ul>
         {%- endif -%}
-      {% if is_megamenu or has_dropdown %}
+        {% if is_megamenu or has_dropdown %}
         </details>
       {% endif %}
     </li>
