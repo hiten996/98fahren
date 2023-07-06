@@ -1,0 +1,61 @@
+{% if section.settings.product_top_image != blank %}
+<div class="productthreeimage borderbtm">
+<div class="page-width">
+<div class="prodimagsctn">
+<div class="topimage">
+<img src="{{ section.settings.product_top_image | img_url: 'original' }}">
+</div>
+
+<div class="btmtwoimgs">
+  {% if section.settings.product_left_image != blank %}
+<div class="btmfirstimgss">
+<img src="{{ section.settings.product_left_image | img_url: 'original'  }}">
+</div>
+    {% endif %}
+
+  {% if section.settings.product_right_image != blank %}
+<div class="btmscndimgss">
+<img src="{{ section.settings.product_right_image | img_url: 'original' }}">
+</div>
+    {% endif %}
+  
+</div>
+  
+</div>
+</div>
+</div>
+  {% endif %}
+
+{% schema %}
+  {
+    "name": "Product Three Image",
+    "settings": [
+      {
+        "type":"image_picker",
+        "id":"product_top_image",
+        "label":"Top Image"
+      },
+      {
+        "type":"image_picker",
+        "id":"product_left_image",
+        "label":"Left Image"
+      },
+      {
+        "type":"image_picker",
+        "id":"product_right_image",
+        "label":"Right Image"
+      }
+    ],
+      "presets": [
+    {
+      "name": "Product Three Image"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,174 @@
+<div class="newcollist">
+  <div class="page-width">
+<div class="section-header">
+<h2>{{ section.settings.heading }}</h2>
+</div>
+
+  <div class="collection_list">
+<div class="leftsidecols">
+<div class="lefttop">
+<div class="top-left pos-rel">
+<img src="{{ section.settings.topleft | img_url: '482x310' }}">
+  <p>{{ section.settings.colname1 }}</p>
+</div>
+
+<div class="top-right pos-rel">
+<img src="{{ section.settings.topright | img_url: 'original' }}">
+  <p>{{ section.settings.colname2 }}</p>
+</div>
+  
+</div>
+
+
+<div class="leftmidl">
+<div class="mdl-left pos-rel">
+<img src="{{ section.settings.mdlleft | img_url: '309x310' }}">
+  <p>{{ section.settings.colname3 }}</p>
+</div>
+
+<div class="mdl-right pos-rel">
+<img src="{{ section.settings.mdlright | img_url: '482x310' }}">
+  <p>{{ section.settings.colname4 }}</p>
+</div>
+  
+</div>
+
+
+  <div class="leftbtm">
+<div class="btm-left pos-rel">
+<img src="{{ section.settings.btmleft | img_url: '482x310' }}">
+  <p>{{ section.settings.colname5 }}</p>
+</div>
+
+<div class="btm-right pos-rel">
+<img src="{{ section.settings.btmright | img_url: '3099x310' }}">
+  <p>{{ section.settings.colname6 }}</p>
+</div>
+  
+</div>
+  
+</div>
+
+
+
+
+<div class="rightsidecols">
+<div class="right-top pos-rel">
+<img src="{{ section.settings.righttop | img_url: 'original' }}">
+  <p>{{ section.settings.colname7 }}</p>
+</div>
+
+<div class="right-btm pos-rel">
+<img src="{{ section.settings.rightbtm | img_url: 'original' }}">
+  <p>{{ section.settings.colname8 }}</p>
+</div>
+</div>
+    
+  </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "New Collection List",
+    "settings": [
+      {
+        "type":"text",
+        "id":"heading",
+        "label":"Heading"
+      },
+      {
+        "type":"image_picker",
+        "id":"topleft",
+        "label":"Collection Image"
+      },
+      {
+        "type":"text",
+        "id":"colname1",
+        "label":"Collection Name"
+      },
+       {
+        "type":"image_picker",
+        "id":"topright",
+        "label":"Collection Image"
+      },
+      {
+        "type":"text",
+        "id":"colname2",
+        "label":"Collection Name"
+      },
+      {
+        "type":"image_picker",
+        "id":"mdlleft",
+        "label":"Collection Image"
+      },
+      {
+        "type":"text",
+        "id":"colname3",
+        "label":"Collection Name"
+      },
+      {
+        "type":"image_picker",
+        "id":"mdlright",
+        "label":"Collection Image"
+      },
+      {
+        "type":"text",
+        "id":"colname4",
+        "label":"Collection Name"
+      },
+      {
+        "type":"image_picker",
+        "id":"btmleft",
+        "label":"Collection Image"
+      },
+      {
+        "type":"text",
+        "id":"colname5",
+        "label":"Collection Name"
+      },
+      {
+        "type":"image_picker",
+        "id":"btmright",
+        "label":"Collection Image"
+      },
+      {
+        "type":"text",
+        "id":"colname6",
+        "label":"Collection Name"
+      },
+      {
+        "type":"image_picker",
+        "id":"righttop",
+        "label":"Collection Image"
+      },
+      {
+        "type":"text",
+        "id":"colname7",
+        "label":"Collection Name"
+      },
+      {
+        "type":"image_picker",
+        "id":"rightbtm",
+        "label":"Collection Image"
+      },
+      {
+        "type":"text",
+        "id":"colname8",
+        "label":"Collection Name"
+      }
+    ],
+      "presets": [
+    {
+      "name": "New Collection List"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

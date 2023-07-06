@@ -1,0 +1,47 @@
+{% if section.settings.heading != blank %}
+<div class="howtouse borderbtm small--hide">
+<div class="page-width">
+<div class="howuse">
+<div class="useheading">
+<div class="section-header text-left">
+<h2>{{ section.settings.heading }}</h2>
+</div>
+</div>
+
+<div class="usetext">
+{{ section.settings.how_to_use }}
+</div>
+  
+</div>
+</div>
+  </div>
+  {% endif %}
+
+{% schema %}
+  {
+    "name": "How to Use",
+    "settings": [
+      {
+        "type":"text",
+        "id":"heading",
+        "label":"Heading"
+      },
+      {
+        "type":"text",
+        "id":"how_to_use",
+        "label":"Content"
+      }
+    ],
+       "presets": [
+    {
+      "name": "Product How To Use"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

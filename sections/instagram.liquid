@@ -1,0 +1,113 @@
+
+<div class="instagramsection">
+  <div class="section-header">
+<h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.para }}</p>
+    <a class="countdown__button btn btn--solid" href="{{ section.settings.bntlink }}">{{ section.settings.btnname }}</a>
+  </div>
+
+<div class="backgrndimgg">
+<img src="https://cdn.shopify.com/s/files/1/0714/4829/7760/t/3/assets/Group%204268.png?v=1686031851">
+</div>
+  
+<div class="instasec">
+<div class="firstwo_image">
+<img src="{{ section.settings.firstimage | img_url: 'original' }}">
+<img src="{{ section.settings.scndimage | img_url: 'original' }}">
+</div>
+
+<div class="thirdinstaimg">
+<img src="{{ section.settings.thirdimage | img_url: 'original' }}">
+</div>
+
+  <div class="fourthinstaimg">
+<img src="{{ section.settings.fourthimage | img_url: 'original' }}">
+</div>
+
+  <div class="fifthinstaimg">
+<img src="{{ section.settings.fifthimage | img_url: 'original' }}">
+</div>
+
+  <div class="sixthinstaimg">
+<img src="{{ section.settings.sixthimage | img_url: 'original' }}">
+</div>
+
+  <div class="svnthinstaimg">
+<img src="{{ section.settings.svnthimage | img_url: 'original' }}">
+</div>
+  
+</div>
+</div>
+{% schema %}
+  {
+    "name": "Instagram Section",
+    "settings": [
+      {
+        "type":"text",
+        "id":"heading",
+        "label":"Heading"
+      },
+      {
+        "type":"text",
+        "id":"para",
+        "label":"Content"
+      },
+      {
+        "type":"text",
+        "id":"btnname",
+        "label":"Button Name"
+      },
+      {
+        "type":"url",
+        "id":"btnlik",
+        "label":"Button Link"
+      },
+      {
+        "type":"image_picker",
+        "id":"firstimage",
+        "label":"Image"
+      },
+      {
+        "type":"image_picker",
+        "id":"scndimage",
+        "label":"Image"
+      },
+      {
+        "type":"image_picker",
+        "id":"thirdimage",
+        "label":"Image"
+      },
+      {
+        "type":"image_picker",
+        "id":"fourthimage",
+        "label":"Image"
+      },
+      {
+        "type":"image_picker",
+        "id":"fifthimage",
+        "label":"Image"
+      },
+      {
+        "type":"image_picker",
+        "id":"sixthimage",
+        "label":"Image"
+      },
+      {
+        "type":"image_picker",
+        "id":"svnthimage",
+        "label":"Image"
+      }
+    ],
+          "presets": [
+    {
+      "name": "Instagram Section"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

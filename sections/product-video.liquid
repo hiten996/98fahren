@@ -1,0 +1,76 @@
+{% if section.settings.product_video != blank %}
+<div class="px-product__main-video video_with_text_main borderbtm">
+  <div class="page-width">
+<div class="video_with_text_video">
+  {% if section.settings.product_video != blank %}
+           <video data-video="1" class="slide_video"  loop controls>
+                    <source type="video/mp4" src="{{ section.settings.product_video }}">
+                </video>
+  {% endif %}
+        <div class="video_bg">
+  {% if section.settings.video_poster_image != blank %}
+    <div class="video_bg_img">
+        <img data-video="1" src="{{ section.settings.video_poster_image | img_url: 'original' }}">
+
+    </div>
+    {% endif %}
+     <div class="vdotitlecntn">
+<h2>{{ product.metafields.custom.video_title }}</h2>
+            <p>{{ product.metafields.custom.video_subtitle }}</p>
+            </div>
+        <div data-video="1" class="video_btn_content pause-state">
+
+          <img  class="flipIcon" src="https://cdn.shopify.com/s/files/1/0714/4829/7760/t/3/assets/playbutton.png?v=1684857550"/>
+        </div>
+      </div>
+  </div>
+
+  {% if section.settings.product_video_heading != blank %}
+<div class="section-header">
+<h2>{{ section.settings.product_video_heading }}</h2>
+  <p>{{ section.settings.product_video_subheading }}</p>
+</div>
+    {% endif %}
+    
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Product Video",
+    "settings": [
+      {
+        "type":"text",
+        "id":"product_video",
+        "label":"Product Video"
+      },
+      {
+        "type":"image_picker",
+        "id":"video_poster_image",
+        "label":"Video Image"
+      },
+      {
+        "type":"text",
+        "id":"product_video_heading",
+        "label":"Heading"
+      },
+      {
+        "type":"text",
+        "id":"product_video_subheading",
+        "label":"Sub Heading"
+      }
+    ],
+              "presets": [
+    {
+      "name": "Product Video"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

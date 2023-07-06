@@ -1,0 +1,64 @@
+{% if section.settings.heading != blank %}
+<div class="product-testimonial">
+<div class="page-width">
+<div class="prod_testimonial">
+<div class="section-header text-left">
+<h2>{{ section.settings.heading }}</h2>
+</div>
+
+  <div class="textcstmr">
+    <img class="dblcoma" src="https://cdn.shopify.com/s/files/1/0714/4829/7760/t/3/assets/doublecoma.svg?v=1684849092">
+  <div class="testimonialproduct">
+<div class="cntentwithname">
+<p>{{ section.settings.cstmr_text }}</p>
+<p class="cstmrnamee">{{ section.settings.cstmr_position }}</p>
+</div>
+  </div>
+
+<div class="custmrprod">
+<img src="{{ section.settings.cstmr_image | img_url: 'original' }}">
+</div>
+  </div>  
+  
+</div>
+</div>
+</div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Product Testimonial",
+    "settings": [
+      {
+        "type":"text",
+        "id":"heading",
+        "label":"Heading"
+      },
+      {
+        "type":"text",
+        "id":"cstmr_text",
+        "label":"Customer Text"
+      },
+      {
+        "type":"text",
+        "id":"cstmr_position",
+        "label":"Customer Position"
+      },
+      {
+        "type":"image_picker",
+        "id":"cstmr_image",
+        "label":"Image"
+      }
+    ],
+          "presets": [
+    {
+      "name": "Product Testimonial"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,144 @@
+{%- assign show_announcement = false -%}
+{%- assign announcement_block_count = 0 -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'announcement' -%}
+    {%- assign show_announcement = true -%}
+    {%- assign announcement_block_count = announcement_block_count | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{% if show_announcement %}
+  <div class="announcement-bar">
+    <div class="page-width">
+      <div class="slideshow-wrapper">
+        <button type="button" class="visually-hidden slideshow__pause" data-id="{{ section.id }}" aria-live="polite">
+          <span class="slideshow__pause-stop">
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-pause" viewBox="0 0 10 13"><path d="M0 0h3v13H0zm7 0h3v13H7z" fill-rule="evenodd"/></svg>
+            <span class="icon__fallback-text">{{ 'sections.slideshow.pause_slideshow' | t }}</span>
+          </span>
+          <span class="slideshow__pause-play">
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-play" viewBox="18.24 17.35 24.52 28.3"><path fill="#323232" d="M22.1 19.151v25.5l20.4-13.489-20.4-12.011z"/></svg>
+            <span class="icon__fallback-text">{{ 'sections.slideshow.play_slideshow' | t }}</span>
+          </span>
+        </button>
+
+        <div
+          id="AnnouncementSliderr"
+          class="announcement-sliderr announcement-bar__scrolling-list mob-hide"
+          data-compact="{{ section.settings.announcement_compact }}"
+          data-block-count="{{ announcement_block_count }}">
+          {%- assign slide_index = 0 -%}
+  {%- capture content -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'announcement' -%}
+              
+                {%- if block.settings.link != blank -%}
+                  <a class="announcement-link" href="{{ block.settings.link }}">
+                {%- endif -%}
+                  {%- if block.settings.text != blank -%}
+                    <p class="announcement-text">{{ block.settings.text }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.link_text != blank -%}
+                    <p class="announcement-link-text">{{ block.settings.link_text }}</p>
+                  {%- endif -%}
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- assign slide_index = slide_index | plus: 1 -%}
+            {%- endif -%}
+            <span class="shape-circle shape--sm"></span>
+          {%- endfor -%}
+    {%- endcapture -%}
+
+          {%- for i in (1..10) -%}
+            <div
+                class="announcement-bar__item"
+                data-index="{{ slide_index }}"
+                {{ block.shopify_attributes }}>
+              {{- content -}}
+            </div>
+          {%- endfor -%}
+        </div>
+
+<div class="mobannouncemment_bar desktop-hide">
+<div class="mob-annoumnt-bar">
+{%- for block in section.blocks -%}
+            {%- if block.type == 'announcement' -%}
+              
+                {%- if block.settings.link != blank -%}
+                  <a class="announcement-link" href="{{ block.settings.link }}">
+                {%- endif -%}
+                  {%- if block.settings.text != blank -%}
+                    <p class="announcement-text">{{ block.settings.text }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.link_text != blank -%}
+                    <p class="announcement-link-text">{{ block.settings.link_text }}</p>
+                  {%- endif -%}
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- assign slide_index = slide_index | plus: 1 -%}
+            {%- endif -%}
+          {%- endfor -%}
+</div>
+</div>
+
+              
+      </div>
+    </div>
+  </div>
+
+{% endif %}
+
+
+<script>
+  $(document).ready(function(){
+   $('.mob-annoumnt-bar').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+     prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: inline-block;"><img src="https://cdn.shopify.com/s/files/1/0714/4829/7760/t/3/assets/arrow-left.png?v=1684828634"></button>',
+     nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: inline-block;"><img src="https://cdn.shopify.com/s/files/1/0714/4829/7760/t/3/assets/arrow-right.png?v=1684828584"></button>',
+}); 
+  });
+</script>
+              
+
+              <style>
+/*                 .announcement-bar__scrolling-list{
+  border: 2px solid black;
+  overflow: hidden;
+  white-space: nowrap;
+} */
+
+.announcement-bar__item {
+  animation: marquee 50s linear infinite;
+}
+
+/* #div2 {
+  display: inline-block;
+  animation: marquee2 10s linear infinite;
+} */
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+              </style>
+<!-- 
+              <script>
+                $('#maindiv').width($('#div1').width());
+              </script> -->

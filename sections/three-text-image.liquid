@@ -1,0 +1,121 @@
+<div class="thretextimg">
+  <div class="section">
+<div class="section-stack">
+<div class="thre-text-img mob-hide">
+{% for block in section.blocks %}
+<div class="textimgthr">
+<div class="thrimg">
+  {% if block.settings.imgss != blank %}
+<img src="{{ block.settings.imgss | img_url: 'original' }}">
+    {% endif %}
+  {% if block.settings.imgss2 != blank %}
+  <img src="{{ block.settings.imgss2 | img_url: 'original' }}">
+    {% endif %}
+</div>
+  <div class="thrtext">
+<p>{{ block.settings.textt }}</p>
+  </div>
+</div>
+{% endfor %}
+</div>
+<div class="desktop-hide">
+<div class="threslider">
+{% for block in section.blocks %}
+<div class="textimgthr">
+<div class="thrimg">
+  {% if block.settings.imgss != blank %}
+<img src="{{ block.settings.imgss | img_url: 'original' }}">
+    {% endif %}
+  {% if block.settings.imgss2 != blank %}
+  <img src="{{ block.settings.imgss2 | img_url: 'original' }}">
+    {% endif %}
+</div>
+  <div class="thrtext">
+<p>{{ block.settings.textt }}</p>
+  </div>
+</div>
+{% endfor %}
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<script>
+
+  $(document).ready(function(){
+    console.log('hiiiiiii');
+    $('.threslider').slick({
+  infinite: true,
+      arrows: false,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+      autoplay: true,
+  autoplaySpeed: 2000,
+});
+  });
+</script>
+
+<style>
+  .thretextimg{background-color:{{section.settings.backgrnd}}}
+  .thrtext p{color:{{section.settings.textclr}}}
+</style>
+
+
+{% schema %}
+  {
+    "name": "Three Text Image",
+    "settings": [
+      {
+        "type":"color",
+        "id":"backgrnd",
+        "label":"background Color"
+      },
+      {
+        "type":"color",
+        "id":"textclr",
+        "label":"Text Color"
+      }
+    ],
+      "blocks": [
+    {
+      "type": "logo",
+      "name": "Three Text Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "imgss",
+          "label": "Logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "imgss2",
+          "label": "Logo 2"
+        },
+        {
+          "type": "text",
+          "id": "textt",
+          "label": "Text"
+        }
+      ]
+    }
+      ],
+      "presets": [
+    {
+      "name": "Three Text Image",
+      "blocks": [
+        {
+          "type": "logo"
+        }
+      ]
+    }
+      ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

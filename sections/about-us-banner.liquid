@@ -1,0 +1,48 @@
+<div class="aboutus-banner">
+<div class="page-width">
+  <div class="aboutustext">
+<p>{{ page.title }}</p>
+  <h2>{{ section.settings.heading }}</h2>
+</div>
+</div>
+
+  <div class="aboutbanner">
+<img class="mob-hide" src="{{ section.settings.banerimg | img_url: 'original' }}">
+    <img class="desktop-hide" src="{{ section.settings.mobimage | img_url: 'original' }}">
+  </div>
+  
+</div>
+
+{% schema %}
+  {
+    "name": "About Us Banner",
+    "settings": [
+      {
+        "type":"text",
+        "id":"heading",
+        "label":"Heading"
+      },
+      {
+        "type":"image_picker",
+        "id":"banerimg",
+        "label":"Banner Image"
+      },
+      {
+        "type":"image_picker",
+        "id":"mobimage",
+        "label":"Mobile Banner Image"
+      }
+    ],
+    "presets": [
+    {
+      "name": "About Us Banner"
+    }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

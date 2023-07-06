@@ -1,0 +1,233 @@
+{% if section.settings.heading  != blank %}
+<div class="fitsection">
+<div class="page-width">
+<div class="fitsec">
+<div class="fitheading">
+<div class="section-header text-left">
+<h2>{{ section.settings.heading }}</h2>
+</div>
+
+  <div class="fitimages desktop-hide">
+  {% if section.settings.fit_left_image != blank %}
+<div class="fitimgrightt">
+<img src="{{ section.settings.fit_left_image | img_url: 'original' }}">
+</div>
+    {% endif %}
+
+ {% if section.settings.fit_right_image != blank %}
+  <div class="fitimgleft">
+<img src="{{ section.settings.fit_right_image | img_url: 'original' }}">
+</div>
+   {% endif %}
+</div>
+
+  {% if section.settings.fit_top_text != blank %}
+<div class="fitbtmtext">
+<p>{{ section.settings.fit_top_text }}</p>
+<span><img src="https://cdn.shopify.com/s/files/1/0714/4829/7760/t/3/assets/measure-ruler-svgrepo-com%201.svg?v=1684895861">See our fit guide</span>
+  <p>{{ section.settings.fit_bottom_text }}</p>
+</div>
+    {% endif %}
+  
+</div>
+
+<div class="fitimages mob-hide">
+   {% if section.settings.fit_left_image != blank %}
+<div class="fitimgrightt">
+<img src="{{ section.settings.fit_left_image | img_url: 'original' }}">
+</div>
+  {% endif %}
+
+   {% if section.settings.fit_right_image != blank %}
+  <div class="fitimgleft">
+<img src="{{ section.settings.fit_right_image | img_url: 'original' }}">
+</div>
+  {% endif %}
+</div>
+  
+</div>
+</div>
+  </div>
+
+
+
+  <!-- SIZE SECTION START -->
+<div class="sizesection">
+<div class="page-width">
+<div class="sizesct">
+<div class="sizeheading">
+<div class="section-header text-left">
+<h2>Sizing</h2>
+</div>
+</div>
+
+<div class="sizetable">
+
+
+<!--                   <div class="sizewashwaranty">
+<div class="sizecontent">
+                  <div class="tabs">
+<ul>
+  <li class="inc tabsactv">Inches</li>
+  <li class="centimeter">Centimeters</li>
+</ul>
+</div>
+ <div class="szchrt">
+                  {%  if product.tags contains 'Size Chart_Vest' %}
+<img src="https://cdn.shopify.com/s/files/1/0555/1403/8481/files/Artboard_1_6.png?v=1686564761" class="mobile-hidden incesimg desktopshow" />
+<img src="https://cdn.shopify.com/s/files/1/0555/1403/8481/files/Artboard_2_5.png?v=1686564761" class="mobile-hidden cntimterimgs hide" />
+
+   <img src="https://cdn.shopify.com/s/files/1/0555/1403/8481/files/Artboard_3_4.png?v=1686564761" class="desktop-hidden mobincesimg mobileshow" />
+   <img src="https://cdn.shopify.com/s/files/1/0555/1403/8481/files/Artboard_4_4.png?v=1686564762" class="hide desktop-hidden mobcntimterimgs" />
+                    {%  elsif product.tags contains 'Size Chart_' %}
+                    {% endif %}
+                  </div>
+  
+
+</div>
+  
+</div> -->
+
+
+
+
+
+<div class="sm-6col md-8col lg-9col">
+  <div class="size-chart__buttons t-center d-hide-for-small-up hide">
+    <span class="btn-link toggle btn-link--active cm" data-measurement="metric">Cm</span>
+    <span class="btn-link toggle btn-link--inactive inches" data-measurement="imperial">In</span>
+  </div>
+  <table> 
+    <thead>
+      <tr>
+        <th class="t-h4 t-left sm-2col md-2col lg-3col-width">
+          <div class="size-chart__buttons d-hide-for-small">
+            <span class="btn-link toggle btn-link--active cm" data-measurement="metric">Cm</span>
+            <span class="btn-link toggle btn-link--inactive inches" data-measurement="imperial">In</span>
+          </div>
+        </th>
+        <th class="t-h4">S</th>
+        <th class="t-h4">M</th>
+        <th class="t-h4">L</th>
+        <th class="t-h4">XL</th>
+        <th class="t-h4">XXL</th>
+      </tr>
+    </thead> 
+    <tbody class="metric cmtable">
+        <tr>
+          <th class="t-left">Chest</th>
+          <td width="125.0875015258789">94</td>
+          <td width="125.0875015258789">100</td>
+          <td width="125.0875015258789">106</td>
+          <td width="125.0875015258789">112</td>
+          <td width="125.0875015258789">118</td>
+        </tr>
+      <tr>
+        <th class="t-left">Waist</th>
+        <td width="125.0875015258789">78</td>
+        <td width="125.0875015258789">84</td>
+        <td width="125.0875015258789">90</td>
+        <td width="125.0875015258789">96</td>
+        <td width="125.0875015258789">102</td>
+      </tr>
+      <tr>
+        <th class="t-left">Hips</th>
+        <td width="125.0875015258789">94</td>
+        <td width="125.0875015258789">100</td>
+        <td width="125.0875015258789">106</td>
+        <td width="125.0875015258789">112</td>
+        <td width="125.0875015258789">118</td>
+      </tr>
+    </tbody>
+    <tbody class="imperial inchestable hide"> <tr>
+      <th class="t-left">Chest</th>
+      <td width="125.0875015258789">37</td>
+      <td width="125.0875015258789">39</td>
+      <td width="125.0875015258789">41.5</td>
+      <td width="125.0875015258789">44</td>
+      <td width="125.0875015258789">46.5</td>
+    </tr>
+      <tr>
+        <th class="t-left">Waist</th>
+        <td width="125.0875015258789">30.5</td>
+        <td width="125.0875015258789">33</td>
+        <td width="125.0875015258789">35.5</td>
+        <td width="125.0875015258789">38</td>
+        <td width="125.0875015258789">40</td>
+      </tr>
+      <tr>
+        <th class="t-left">Hips</th>
+        <td width="125.0875015258789">37</td>
+        <td width="125.0875015258789">39</td>
+        <td width="125.0875015258789">41.5</td>
+        <td width="125.0875015258789">44</td> 
+        <td width="125.0875015258789">46.5</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  
+</div>
+  </div>
+  <script>
+ $(document).ready(function() {
+$('.cm').click(function(){
+  $('.cmtable').addClass('showw');
+  $('.inchestable').addClass('hide');
+  $('.cmtable').removeClass('hide');
+});
+
+   $('.inches').click(function(){
+  $('.inchestable').addClass('showw');
+     $('.inchestable').removeClass('hide');
+  $('.cmtable').addClass('hide');
+});
+ });
+  </script>
+<!-- SIZE SECTION END -->
+{% endif %}
+{% schema %}
+  {
+    "name": "Product Fit",
+    "settings": [
+      {
+        "type":"text",
+        "id":"heading",
+        "label":"Heading"
+      },
+      {
+        "type":"text",
+        "id":"fit_top_text",
+        "label":"Top Text"
+      },
+      {
+        "type":"text",
+        "id":"fit_bottom_text",
+        "label":"Bottom Text"
+      },
+      {
+        "type":"image_picker",
+        "id":"fit_left_image",
+        "label":"Left Image"
+      },
+      {
+        "type":"image_picker",
+        "id":"fit_right_image",
+        "label":"Right Image"
+      }
+    ],
+     "presets": [
+    {
+      "name": "Product Fit"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

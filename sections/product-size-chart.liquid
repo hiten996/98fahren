@@ -1,0 +1,63 @@
+<div class="sizesection">
+<div class="page-width">
+<div class="sizesct">
+<div class="sizeheading">
+<div class="section-header text-left">
+<h2>{{ section.settings.heading }}</h2>
+</div>
+</div>
+
+<div class="szietable">
+
+
+<ul class="tabs">
+    <li><a href="#tab-1">Cm</a></li>
+    <li><a href="#tab-2">In</a></li>
+  </ul>
+ <div id="tab-1">
+  {{ section.settings.size_in_cm }}
+  </div>
+  <div id="tab-2">
+ {{ section.settings.size_in_inch }}
+  </div>
+  
+
+</div>
+  
+</div>
+</div>
+  </div>
+
+{% schema %}
+  {
+    "name": "Product Size",
+    "settings": [
+      {
+        "type":"text",
+        "id":"heading",
+        "label":"Heading"
+      },
+      {
+        "type":"text",
+        "id":"size_in_cm",
+        "label":"Size in Cm"
+      },
+      {
+        "type":"text",
+        "id":"size_in_inch",
+        "label":"Size in inch"
+      }
+    ],
+       "presets": [
+    {
+      "name": "Product Size"
+    }
+       ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
